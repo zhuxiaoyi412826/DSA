@@ -7,8 +7,9 @@ import java.util.List;
  * <h3>迪克斯特拉 单源最短路径算法</h3>
  */
 public class Dijkstra {
+    // 1.定义了一个图，然后调用dijkstra方法来计算最短路径。
     public static void main(String[] args) {
-        /*Vertex v1 = new Vertex("v1");
+        Vertex v1 = new Vertex("v1");
         Vertex v2 = new Vertex("v2");
         Vertex v3 = new Vertex("v3");
         Vertex v4 = new Vertex("v4");
@@ -21,26 +22,28 @@ public class Dijkstra {
         v4.edges = List.of(new Edge(v5, 6));
         v5.edges = List.of();
         v6.edges = List.of(new Edge(v5, 9));
+// 2.创建图
+        List<Vertex> graph = List.of(v1, v2, v3, v4, v5, v6);
 
-        List<Vertex> graph = List.of(v1, v2, v3, v4, v5, v6);*/
+        // Vertex v1 = new Vertex("v1");
+        // Vertex v2 = new Vertex("v2");
+        // Vertex v3 = new Vertex("v3");
+        // Vertex v4 = new Vertex("v4");
 
-        Vertex v1 = new Vertex("v1");
-        Vertex v2 = new Vertex("v2");
-        Vertex v3 = new Vertex("v3");
-        Vertex v4 = new Vertex("v4");
+        // v1.edges = List.of(new Edge(v2, 2), new Edge(v3, 1));
+        // v2.edges = List.of(new Edge(v3, -2));
+        // v3.edges = List.of(new Edge(v4, 1));
+        // v4.edges = List.of();
 
-        v1.edges = List.of(new Edge(v2, 2), new Edge(v3, 1));
-        v2.edges = List.of(new Edge(v3, -2));
-        v3.edges = List.of(new Edge(v4, 1));
-        v4.edges = List.of();
-
-        List<Vertex> graph = List.of(v1, v2, v3, v4);
+        // List<Vertex> graph = List.of(v1, v2, v3, v4);
 
         dijkstra(graph, v1);
     }
 
     private static void dijkstra(List<Vertex> graph, Vertex source) {
+        // 1. 将所有顶点放入一个列表中
         ArrayList<Vertex> list = new ArrayList<>(graph);
+        // 2. 初始化所有顶点的距离为无穷大，除了源顶点，它的距离为0
         source.dist = 0;
 
         while (!list.isEmpty()) {

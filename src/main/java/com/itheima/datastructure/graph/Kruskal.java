@@ -64,7 +64,8 @@ public class Kruskal {
         ));
         kruskal(vertices.size(), queue);
     }
-
+// 使用Kruskal算法从给定的加权无向图中找出最小生成树。它通过优先队列按权重从小到大获取边，并使用并查集数据结构来判断新加入的边是否会导致环的形成，
+// 从而构建出一个不包含环且连接所有顶点的最小权重边集。最终，代码会输出构成最小生成树的所有边及其连接的顶点。
     static void kruskal(int size, PriorityQueue<Edge> queue) {
         List<Edge> list = new ArrayList<>();
         DisjointSet set = new DisjointSet(size);

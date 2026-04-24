@@ -13,19 +13,19 @@ import java.util.stream.Collectors;
 public class FloydWarshall {
     public static void main(String[] args) throws IOException {
         // 正常情况
-        Vertex v1 = new Vertex("v1");
-        Vertex v2 = new Vertex("v2");
-        Vertex v3 = new Vertex("v3");
-        Vertex v4 = new Vertex("v4");
+        // Vertex v1 = new Vertex("v1");
+        // Vertex v2 = new Vertex("v2");
+        // Vertex v3 = new Vertex("v3");
+        // Vertex v4 = new Vertex("v4");
 
-        v1.edges = List.of(new Edge(v3, -2));
-        v2.edges = List.of(new Edge(v1, 4), new Edge(v3, 3));
-        v3.edges = List.of(new Edge(v4, 2));
-        v4.edges = List.of(new Edge(v2, -1));
-        List<Vertex> graph = List.of(v1, v2, v3, v4);
+        // v1.edges = List.of(new Edge(v3, -2));
+        // v2.edges = List.of(new Edge(v1, 4), new Edge(v3, 3));
+        // v3.edges = List.of(new Edge(v4, 2));
+        // v4.edges = List.of(new Edge(v2, -1));
+        // List<Vertex> graph = List.of(v1, v2, v3, v4);
 
         // 负环情况
-        /*Vertex v1 = new Vertex("v1");
+        Vertex v1 = new Vertex("v1");
         Vertex v2 = new Vertex("v2");
         Vertex v3 = new Vertex("v3");
         Vertex v4 = new Vertex("v4");
@@ -34,7 +34,7 @@ public class FloydWarshall {
         v2.edges = List.of(new Edge(v3, -4));
         v3.edges = List.of(new Edge(v4, 1), new Edge(v1, 1));
         v4.edges = List.of();
-        List<Vertex> graph = List.of(v1, v2, v3, v4);*/
+        List<Vertex> graph = List.of(v1, v2, v3, v4);
 
         /*
                 直接连通
@@ -72,8 +72,9 @@ public class FloydWarshall {
             v3  5   1   0   2
             v4  3   -1  1   0
          */
-//        floydWarshall(graph);
+      floydWarshall(graph);
         for (int i = 0; i < 100000; i++) {
+            // 测试内存泄漏 创建大量对象并回收它们
             Object o = new Object();
         }
         System.gc();

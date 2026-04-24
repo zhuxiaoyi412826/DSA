@@ -50,6 +50,8 @@ public class Prim {
         }
     }
 
+    // 更新当前顶点的未访问邻居的最短距离和前驱节点
+    // 作用是确保每个顶点的 dist 字段总是保存从起始顶点到达该顶点的最短路径的权重
     private static void updateNeighboursDist(Vertex curr) {
         for (Edge edge : curr.edges) {
             Vertex n = edge.linked;
@@ -63,6 +65,7 @@ public class Prim {
         }
     }
 
+    // 现Prim算法的关键部分之一，目的是从给定的顶点列表中选择距离起始顶点距离最短且未被访问的顶点。下面是对
     private static Vertex chooseMinDistVertex(ArrayList<Vertex> list) {
         Vertex min = list.get(0);
         for (int i = 1; i < list.size(); i++) {

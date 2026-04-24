@@ -35,11 +35,16 @@ public class BFS {
 
     private static void bfs(Vertex v) {
         LinkedList<Vertex> queue = new LinkedList<>();
+        // 1. 标记当前顶点为已访问
         v.visited = true;
+        // 2. 将当前顶点加入队列
         queue.offer(v);
         while (!queue.isEmpty()) {
             Vertex poll = queue.poll();
             System.out.println(poll.name);
+            // 3. 遍历当前顶点的所有邻接顶点
+            // 4. 标记未访问的邻接顶点为已访问
+            // 5. 将未访问的邻接顶点加入队列
             for (Edge edge : poll.edges) {
                 if (!edge.linked.visited) {
                     edge.linked.visited = true;
